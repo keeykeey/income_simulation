@@ -8,14 +8,14 @@ label0 =tk.Label(root,text="生涯年収を計算します",font=('',20))
 label0.place(x=0,y=0)
 #label0.pack()
 
-label1 = tk.Label(root,text='(1) 入都する時の年齢を入力してください（23歳以上）。')
+label1 = tk.Label(root,text='(1) 入社する時の年齢を入力してください（23歳以上）。')
 label1.place(x=5,y=35)
 editbox1 = tk.Entry(root,width=2,borderwidth=1)
 editbox1.place(x=15,y=55)
 
 label2_1 = tk.Label(root,text='(2) 以下の入力欄に、各年齢での昇給幅(0〜6)を入力して下さい')
 label2_1.place(x=5,y=75)
-label2_2 = tk.Label(root,text='クビレベル→1 / ヤバイ→2 / 調子が悪かった→3 / 普通→4 / まあまあ良い→5 / 大活躍→6')
+label2_2 = tk.Label(root,text='とても悪い→1 / 悪い→2 / やや悪い→3 / 普通→4 / まあまあ良い→5 / 大変良い→6')
 label2_2.place(x=15,y=95)
 
 label2_23 = tk.Label(root,text='23歳          号昇給')
@@ -268,7 +268,7 @@ label3_4.place(x=5,y=455)
 editbox3_4 = tk.Entry(width=2,borderwidth=1)
 editbox3_4.place(x=15,y=475)
 
-label4 = tk.Label(root,text='(4) 入都時の初任給（号給）を入力して下さい（通常２９号給）。')
+label4 = tk.Label(root,text='(4) 入社時の初任給（号給）を入力して下さい（通常２９号給）。')
 label4.place(x=5,y=495)
 editbox4 = tk.Entry(width=2,borderwidth=1)
 editbox4.place(x=15,y=515)
@@ -285,13 +285,13 @@ def program():
     import numpy as np 
     from tkinter import messagebox
 
-    # 入都年齢
+    # 入社年齢
     if (int(editbox1.get())<23) or (int(editbox1.get())>60) :
         editbox1.delete(0,tk.END)
         editbox1.insert(tk.END,23)
     val1 = int(editbox1.get())
 
-    # 入都してから退職までの一年毎の昇給幅
+    # 入社してから退職までの一年毎の昇給幅
     class out_of_range_exception(Exception):
         pass
     list_of_ebox2 = [ebox23,ebox24,ebox25,ebox26,ebox27,ebox28,ebox29,ebox30,
