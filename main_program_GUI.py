@@ -44,12 +44,12 @@ def goukyuu(age = 26,
             shoukaku_pattern = shoukaku_my_pattern,
             starting_salary = 29):
     '''
-    age:入都した時の年齢
+    age:入社した時の年齢
     shoukyuu_pattern:昇級パターン,pd.DataFrame
     shoukaku_pattern:昇格する年齢のパターン,pd.Series
     starting_salary:初任給
-    役割　　入都から退職までの自身の毎年の級、号給を決める。
-    引数　　age:入都時の号給　pattern:業績評価のパターンassessment_〇〇と言う変数の、データフレーム
+    役割　　入社から退職までの自身の毎年の級、号給を決める。
+    引数　　age:入社時の号給　pattern:業績評価のパターンassessment_〇〇と言う変数の、データフレーム
     戻り値　pandasのDataFrame 
     '''
 
@@ -104,8 +104,6 @@ def management_allowance(salary_table):
 
 def bounus(salary_table,df_monthly_salary):
     '''
-    成績率、管理職加算、職務段階別加算によって賞与支給額を変化させるコードは、現時点では書かない。
-    書くときに、salary_tableを使用する予定。
     役割　毎年の特別給支給額を求める。
     引数　salary_table : goukyuu()の戻り値。データフレーム。
           df_monthly_salary() ; monthly_salary()の戻り値。
